@@ -31,27 +31,31 @@ function createTrackItem(index,name,duration){
 var listAudio = [
   {
     name:"Шапка аудиокниги",
-    file:"../audiobooks/000.mp3",
+    file:"../Chehov-audiobook/audiobooks/000.mp3",
     duration:"00:28",
-    image: "url(../images/bg1.jpg)"
+    image: "url(../Chehov-audiobook/images/bg1.jpg)",
+    rider: "Армихос Артур"
   },
   {
     name:"Чехов А. П. - Смерть чиновника",
-    file:"../audiobooks/001.mp3",
+    file:"../Chehov-audiobook/audiobooks/001.mp3",
     duration:"00:28",
-    image: "url(../images/bg1.jpg)"
+    image: "url(../Chehov-audiobook/images/bg1.jpg)",
+    rider: "Армихос Артур"
   },
   {
     name:"Чехов А. П. - Лошадиные зубы",
-    file:"../audiobooks/002.mp3",
+    file:"../Chehov-audiobook/audiobooks/002.mp3",
     duration:"05:53",
-    image: "url(../images/bg2.jpg)"
+    image: "url(../Chehov-audiobook/images/bg2.jpg)",
+    rider: "Алексеев Илья"
   },
   {
     name:"Чехов А. П. - Дачники",
-    file:"../audiobooks/003.mp3",
+    file:"../Chehov-audiobook/audiobooks/003.mp3",
     duration:"00:28",
-    image: "url(../images/bg3.jpg)"
+    image: "url(../Chehov-audiobook/images/bg3.jpg)",
+    rider: "Армихос Артур"
   }
 ]
 
