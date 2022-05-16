@@ -1,0 +1,311 @@
+
+  html,
+  body {
+    position: relative;
+    height: 100vh;
+  }
+
+  body {
+    background: #363636;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: #000;
+    margin: 0;
+    padding: 0;
+  }
+
+  .content-header{
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #363636;
+  }
+  
+  .content-header__logo{
+    display: block;
+    height: 80%;
+    width: 180px;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    margin-left: 30px;
+    background-image: url(../images/logo.svg);
+    background-repeat: no-repeat;
+      
+  }
+  
+  .content-header__list{
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+      display: flex;
+  }
+  
+  .content-header__item{
+      margin-right: 60px;
+      position: relative;
+  }
+  
+  .content-header__item:hover::before{
+      content: '';
+      display: block;
+      width: 100%;
+      height: 2px;
+      background-color: white;
+      position: absolute;
+      bottom: -10px;
+  }
+  
+  .content-header__link{
+      color: white;
+      text-decoration: none;
+  }
+  
+  .content-header__label{
+      color: white;
+  }
+
+  .content-main{
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        
+  }
+    
+  .content-main__bg{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    align-items: center;
+    /*background-image: url(../images/bg1.jpg);*/
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    width: 100%;
+    color: white;
+    background: #363636;
+  }
+    
+  .bgvideo{
+    height: 50%;
+    padding-top: 20px;
+  }
+    
+  .h{
+    padding: 0;
+    margin: 0;
+  }
+    
+    /* Контейнер, который затемняет страницу */
+  .cmc {
+    display: none;
+    align-items:center;
+    justify-content:center;    
+    z-index: 99;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    animation: bg 0.5s ease;
+    background: rgba(36, 36, 36, 0.7);
+  }
+    
+    /* Модальное окно */
+  .cmt { 
+    display: flex;
+    flex-wrap: wrap;
+    align-items:center;
+    justify-content:center;
+    width:80%;
+    top: 40%;
+    width: 1000px;
+    height: 650px;
+    transition: 0.5s;
+    border: 2px solid #363636;
+    border-radius: 5px;
+    background: rgba(204, 204, 204, 1);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2), 0 16px 20px rgba(0,0,0,0.2);
+    position: reletive;
+    animation: scale 0.5s ease;
+    text-align: center;
+  }
+  
+  .cmt h3{
+    width: 100%;
+    border: 1px solid white;
+  }
+  .cmt p{
+    width: 100%;
+    border: 1px solid white;
+  }
+    /* Кнопка с крестиком закрывающая окно */
+  .css-modal-close {
+    content: "";
+    width: 50px;
+    height: 50px;  
+    border-radius: 100px;
+    position: absolute;
+    opacity:0.5;
+    border: 2px solid black;
+    z-index: 100;
+    top: 20px;
+    right: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2), 0 16px 20px rgba(0,0,0,0.2);
+    background-image: url("./../img/png/cross.png");
+    background-color: #FFF;
+    background-size: cover;
+    animation: move 0.5s ease;
+    cursor: pointer;
+  }
+     
+    /*Скрыть*/
+    #css-modal-checkbox:checked + .cmc {
+        display:flex;
+    }
+    
+     /*Флажок */
+     #css-modal-checkbox {
+        display: none;
+    }
+    
+    .css-modal-close:hover {
+      opacity:0.8;
+    }
+    
+    /* Анимации */
+    @keyframes scale {
+        0% {
+            transform: scale(0);
+        }
+        100% {
+            transform: scale(1);
+        }
+    }
+    @keyframes move {
+        0% {
+            right: -80px;
+        }
+        100% {
+            right: 20px;
+        }
+    }
+    @keyframes bg {
+        0% {
+            background: rgba(36, 36, 36, 0);
+        }
+        100% {
+            background: rgba(36, 36, 36, 0.7);
+        }
+    } 
+
+    .swiper {
+      width: 100%;
+      height: 90vh;
+    }
+
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+
+      /* Center slide text vertically */
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      -webkit-justify-content: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      -webkit-align-items: center;
+      align-items: center;
+    }
+
+    .swiper-slide img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  .content-slider-1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .content-slider-2{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .content-slider-2__sideblock{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    /*background-image: url(../images/bg1.jpg);*/
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 100%;
+    min-width: 50%;
+    color: white;
+    background: #363636;
+  }
+
+  .content-slider-2__sideblock__table{
+    width: 80%;
+    text-align: left;
+  }
+
+  .content-slider-2__sideblock__table td{
+    border: 1px solid white;
+    
+  }
+
+
+  .content-slider-2__image{
+    height:  auto;
+    width:  80%;
+    /*background-image: url(../images/bg1.jpg);*/
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+  }
+
+  .content-slider-2__player-header{
+    width: 100%;
+    height: 50%;
+    padding: 0;
+    background-color: #373737;
+    background-image: url(../images/bg1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+  }
+
+  .content-slider-3__sideblock{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 100%;
+    height: 100%;
+    color: white;
+    background: #363636;
+  }
+
+  .content-slider-3__image{
+    height: 100%;
+    width: 100%;
+    
+    background-image: url(../images/4.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+  }
