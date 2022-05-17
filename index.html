@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="styles/slider.css"/>
+    <link rel="stylesheet" href="styles/normolize.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/player.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a062562745.js" crossorigin="anonymous"></script>
+    <title>Чехов Жив. Аудиокинги</title>
+</head>
+<body>
+  <header class="content-header">
+    <a class="content-header__logo"><img src="images/logo.png"></a>
+    <nav>
+        <ul class="content-header__list">
+            <li class="content-header__item"><label for="css-modal-checkbox" class="content-header__label">Справка</label></li>
+        </ul>
+    </nav>
+  </header>
+  <!-- Модальное окно --> 
+  <input class="css-modal" type="checkbox" id="css-modal-checkbox" />
+  <div class="cmc">		
+      <div class="cmt">
+          <h3>Заголовок</h3>
+          <p>Какой-то текст в большом или не очень большом количестве</p>
+      </div>
+      <label for="css-modal-checkbox" class="css-modal-close"></label>
+  </div>
+  <!-- Конец -->
+
+    <!-- Swiper -->
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide content-slider-1" id="main">
+          <!-- Slide 1 -->
+          <video autoplay loop muted class="bgvideo" id="bgvideo">
+            <source src="/images/1.mp4" type="video/mp4"></source>
+          </video>
+          <div class="content-main__bg">
+            <h3>Заголовок</h3>
+            <p>Какой-то текст в большом или не очень большом количестве</p>
+        </div>
+        </div>
+        <div class="swiper-slide">
+          <!-- Slide 2 -->
+          <div class="content-slider-2__sideblock">
+            
+              <video autoplay loop muted class="content-slider-2__image" id="bgvideo">
+                <source src="/images/1.mp4" type="video/mp4"></source>
+              </video>
+            
+            <h3 class="title-sideblock"></h3>
+            <table class="content-slider-2__sideblock__table">
+              <tr><td>Сборник:</td><td>Чехов жив</td></tr>
+              <tr><td>Жанр:</td><td>Рассказ</td></tr>
+              <tr><td>Качество:</td><td>256 кб/с</td></tr>
+              <tr><td>Читают:</td><td>Алексеев Илья, Армихос Артур</td></tr>
+              <tr><td>Длительность:</td><td>00:00</td></tr>
+            </table>
+            
+          </div>
+          <div class="player-box">            
+            <div class="content-slider-2__player-header" id="player-image"></div>
+            <audio id="myAudio" ontimeupdate="onTimeUpdate()">
+            <!-- <source src="audio.ogg" type="audio/ogg"> -->
+            <source id="source-audio" src="" type="audio/mpeg">
+            Your browser does not support the audio element.
+            </audio>
+            
+            <div class="player-ctn">
+             <!--<div class="player-image" id="player-image"></div>-->
+            <div class="infos-ctn">
+                <div class="timer">00:00</div>
+                <div class="title"></div>
+                <div class="duration">00:00</div>
+            </div>
+            <div id="myProgress">
+                <div id="myBar"></div>
+            </div>
+            <div class="btn-ctn">
+                
+                <div class="btn-action" onclick="rewind()">
+                    <div id="btn-faws-rewind">
+                    <i class='fas fa-backward smart'></i>
+                    </div>
+                </div>
+                <div class="btn-action smart" onclick="toggleAudio()">
+                    <div id="btn-faws-play-pause">
+                    <i class='fas fa-play' id="icon-play"></i>
+                    <i class='fas fa-pause' id="icon-pause" style="display: none"></i>
+                    </div>
+                </div>
+                <div class="btn-play smart" onclick="forward()">
+                    <div id="btn-faws-forward">
+                    <i class='fas fa-forward'></i>
+                    </div>
+                </div>
+                
+                <div class="btn-mute smart" id="toggleMute" onclick="toggleMute(getElementById('volume').value)">
+                    <div id="btn-faws-volume">
+                    <i id="icon-vol-up" class='fas fa-volume-up'></i>
+                    <i id="icon-vol-mute" class='fas fa-volume-mute' style="display: none"></i>
+                    </div>
+                </div>
+                <input class="volume" id="volume" min="0" max="100" value="100" type="range" onchange="ChangeVolume(this.value)">
+
+            </div>
+            <div class="playlist-ctn"></div>
+            
+            </div>
+
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <!-- Slide 3 -->
+          <div class="content-slider-3__sideblock">
+            <div>
+              <h3>Заголовок</h3>
+              <p>Какой-то текст в большом или не очень большом количестве</p>
+            </div>
+            <div>
+              <h3>Заголовок</h3>
+              <p>Какой-то текст в большом или не очень большом количестве</p>
+            </div>
+            <div>
+              <h3>Заголовок</h3>
+              <p>Какой-то текст в большом или не очень большом количестве</p>
+            </div>
+          </div>
+          <div class="content-slider-3__image"></div>
+          
+
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+
+    <!-- Swiper JS -->
+    <script src="js/slider.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        direction: "vertical",
+        slidesPerView: 1,
+        spaceBetween: 30,
+        mousewheel: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+      });
+    </script>
+    <script  src="./js/main.js"></script>
+  
+
+</body>
+</html>
