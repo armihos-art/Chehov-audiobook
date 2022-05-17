@@ -32,25 +32,25 @@ var listAudio = [
   {
     name:"Шапка аудиокниги",
     file:"../Chehov-audiobook/audiobooks/000.mp3",
-    duration:"00:28",
+    duration:"00:36",
     image: "url(../Chehov-audiobook/images/bg1.jpg)"
   },
   {
     name:"Чехов А. П. - Смерть чиновника",
     file:"../Chehov-audiobook/audiobooks/001.mp3",
-    duration:"00:28",
+    duration:"05:19",
     image: "url(../Chehov-audiobook/images/bg1.jpg)"
   },
   {
     name:"Чехов А. П. - Лошадиные зубы",
     file:"../Chehov-audiobook/audiobooks/002.mp3",
-    duration:"05:53",
+    duration:"08:58",
     image: "url(../Chehov-audiobook/images/bg2.jpg)"
   },
   {
     name:"Чехов А. П. - Дачники",
     file:"../Chehov-audiobook/audiobooks/003.mp3",
-    duration:"00:28",
+    duration:"04:00",
     image: "url(../Chehov-audiobook/images/bg3.jpg)"
   }
 ]
